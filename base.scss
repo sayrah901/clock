@@ -1,0 +1,52 @@
+$colorDark : #404040;
+$white: #fff;
+$borderRad: 4px;
+body{
+  background-color: $colorDark;
+  color : $white;
+}
+.outer-box{
+  width: 370px;
+  height: 220px;
+  border-radius: $borderRad;
+  margin: 0 auto;
+  border: 1px solid $colorDark;
+  background: $white;
+  color: $colorDark;
+  padding : {
+    top: 16px;
+    bottom: 16px;
+  }
+}
+.inner-box{
+  width: 330px;
+  height: 200px;
+  border-radius: $borderRad;
+  margin: 0 auto;
+  border: 2px solid lighten($colorDark, 60%);
+ 
+  background: $white;
+  color: $colorDark;
+  padding : 4px;
+}
+.text-center{
+  text-align: center;
+}
+p{
+  font-size: 24px;
+} 
+.nine, .three{
+  display: inline-block;
+  margin-top: 60px;
+}
+.three{
+  float: right;
+  clear: both;
+  }
+.twelve{
+  margin-top : 0;
+  margin-bottom : 0;
+  }
+.six{
+  margin-top: 40px;
+}
