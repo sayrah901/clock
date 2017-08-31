@@ -1,33 +1,33 @@
 $colorDark : #404040;
 $white: #fff;
-$borderRad: 4px;
+$yellow: #f2dd68;
+$borderRad: 50%;
+
 body{
   background-color: $colorDark;
   color : $white;
 }
 .outer-box{
-  width: 370px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   border-radius: $borderRad;
-  margin: 0 auto;
+  margin: 30px auto;
   border: 1px solid $colorDark;
-  background: $white;
+  background: $yellow;
   color: $colorDark;
-  padding : {
-    top: 16px;
-    bottom: 16px;
-  }
+  box-shadow: 0 2px 5px #000;
 }
 .inner-box{
-  width: 330px;
-  height: 200px;
+  position: relative;
+  width: 230px;
+  height: 230px;
   border-radius: $borderRad;
   margin: 0 auto;
   border: 2px solid lighten($colorDark, 60%);
- 
+  margin-top: 23px;
   background: $white;
   color: $colorDark;
-  padding : 4px;
+  padding: 0;
 }
 .text-center{
   text-align: center;
@@ -35,18 +35,88 @@ body{
 p{
   font-size: 24px;
 } 
-.nine, .three{
-  display: inline-block;
-  margin-top: 60px;
+ .three, .six, .nine, .twelve, .center-circle, .second-hand, .minute-hand, .hour-hand{
+  position: absolute;
+   margin: 0;
+   padding: 0;
+   text-align: center;
 }
 .three{
-  float: right;
-  clear: both;
+  top: 45%;
+  right: 4px;
   }
 .twelve{
-  margin-top : 0;
-  margin-bottom : 0;
+  
+  top: 0;
+  left: 45%;
   }
 .six{
-  margin-top: 40px;
+ bottom: 0;
+ left: 47%;
+}
+.nine{
+  top: 45%;
+  left: 4px;
+}
+.center-circle{
+  height: 15px;
+  width: 15px;
+  border-radius: $borderRad;
+  background-color: lighten( $colorDark, 5%);
+   top: 48%;
+  left: 47%;
+  z-index : 100;
+}
+.second-hand{
+  width: 2px;
+  height: 25%;
+  background-color: lighten($colorDark, 30%);
+  left: 50%;
+  top: 31%;
+  z-index: 20;
+  transform-origin : 50% 80%;
+  -webkit-animation: rotate 60s infinite;
+  animation: rotate 60s infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+.minute-hand{
+  width: 4px;
+  height: 40%;
+  background-color: lighten($colorDark, 15%);
+  top: 20%;
+  left: 49.7%;
+  border-radius: 10px;
+  transform-origin : 50% 75%;
+  -webkit-animation: rotate 3600s infinite;
+  animation: rotate 3600s infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+ }
+.hour-hand{
+  width: 7px;
+  height: 20%;
+  top: 36%;
+  left: 49%;
+  border-radius:  35% 35% 0 0 ;
+  background-color: lighten($colorDark, 5%);
+}
+.transition{
+  transition: all 1s linear;
+}
+@keyframes rotate{
+  from{
+    transform : rotate(0deg);
+  }
+  to{
+    transform : rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate{
+  from{
+    transform : rotate(0deg);
+  }
+  to{
+    transform : rotate(360deg);
+  }
 }
